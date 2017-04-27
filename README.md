@@ -1,2 +1,4 @@
-# react-relay-graphql
-A Twitter clone created using React, Relay and GraphQL
+# Twitter Clone using React, Relay and GraphQL
+
+## Objectives
+Implement GraphQL backend and Relay frontend
