@@ -1,9 +1,13 @@
 import db from '../db.js'
 
-class Tweet {
+class TweetModel {
   static all () {
     return db.select().table('tweet')
   }
+
+  static getByUser (userId) {
+    return db('tweet').select().where('user_id', userId)
+  }
 }
 
-export default Tweet
+export default TweetModel
