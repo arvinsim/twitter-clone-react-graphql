@@ -7,6 +7,8 @@ import {
 } from 'graphql'
 
 import TweetType from './TweetType'
+import TweetModel from '../models/tweet.js'
+import FollowerModel from '../models/follower.js'
 
 const UserType = new GraphQLObjectType({
   name: 'users',
@@ -20,10 +22,16 @@ const UserType = new GraphQLObjectType({
         type: new GraphQLNonNull(GraphQLString)
       },
       tweets: {
-        type: new GraphQLList(TweetType)
+        type: new GraphQLList(TweetType),
+        resolve (user) {
+          return TweetModel.getByUser(user.id)
+        }
       },
       followers: {
-        type: new GraphQLList(UserType)
+        type: new GraphQLList(UserType),
+        resolve (user) {
+          return FollowerModel.getFollowers(user.id)
+        }
       }
     }
   }

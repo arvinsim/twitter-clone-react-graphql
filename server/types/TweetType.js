@@ -7,6 +7,7 @@ import {
 } from 'graphql'
 
 import UserType from './UserType'
+import UserModel from '../models/user.js'
 
 const TweetType = new GraphQLObjectType({
   name: 'tweets',
@@ -17,7 +18,10 @@ const TweetType = new GraphQLObjectType({
         type: new GraphQLNonNull(GraphQLID)
       },
       user: {
-        type: new GraphQLNonNull(UserType)
+        type: new GraphQLNonNull(UserType),
+        resolve (tweet) {
+          return UserModel.getById(tweet.id)
+        }
       },
       content: {
         type: new GraphQLNonNull(GraphQLString)

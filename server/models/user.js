@@ -4,6 +4,10 @@ class User {
   static all () {
     return db.select().table('user')
   }
+
+  static getById (userId) {
+    return db.select().from('user').where('id', userId).first()    
+  }
 }
 
 export default User
