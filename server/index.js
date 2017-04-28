@@ -1,6 +1,6 @@
 import express from 'express'
 import graphqlHTTP from 'express-graphql'
-import { UserSchema, rootResolver } from '../schemas/user'
+import { UserSchema, rootResolver } from './schemas/user'
 
 const app = express()
 
