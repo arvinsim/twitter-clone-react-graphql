@@ -9,8 +9,8 @@
   "scripts": {
     "dev": "nodemon --exec ./node_modules/.bin/babel-node --presets=es2015 -- ./server/index.js",
     "createdb": "./node_modules/.bin/babel-node ./scripts/createdb.js",
-    "mockdb": "./node_modules/.bin/babel-node ./scripts/mockdb.js",
-    "setupdb": "yarn createdb && yarn mockdb"
+    "seeddb": "./node_modules/.bin/babel-node ./scripts/seeddb.js",
+    "setupdb": "yarn createdb && yarn seeddb"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
