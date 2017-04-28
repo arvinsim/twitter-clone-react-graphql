@@ -8,7 +8,9 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon --exec ./node_modules/.bin/babel-node --presets=es2015 -- ./server/index.js",
-    "createdb": "./node_modules/.bin/babel-node ./scripts/createdb.js"
+    "createdb": "./node_modules/.bin/babel-node ./scripts/createdb.js",
+    "mockdb": "./node_modules/.bin/babel-node ./scripts/mockdb.js",
+    "setupdb": "yarn createdb && yarn mockdb"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
@@ -19,6 +21,7 @@
     "eslint-plugin-node": "^4.2.2",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
+    "faker": "^4.1.0",
     "nodemon": "^1.11.0"
   },
   "dependencies": {
