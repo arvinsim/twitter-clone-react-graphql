@@ -19,6 +19,7 @@ db.serialize(() => {
     id INTEGER PRIMARY KEY,
     user_id INTEGER,
     timestamp INTEGER,
+    content VARCHAR(140),
     FOREIGN KEY(user_id) REFERENCES user(id)
   )
   `)

@@ -33,6 +33,7 @@ knex.select('id').from('user')
       for (let i = 0; i < numberOfTweets; i++) {
         tweets.push({
           user_id: user.id,
+          content: faker.lorem.sentence(),
           timestamp: faker.date.recent()
         })
       }
