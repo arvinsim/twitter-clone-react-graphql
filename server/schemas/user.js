@@ -1,6 +1,9 @@
 import { buildSchema } from 'graphql'
 
-export const UserSchema = buildSchema(`
+import UserModel from '../models/user.js'
+import TweetModel from '../models/tweet.js'
+
+export const QuerySchema = buildSchema(`
   type User {
     id: ID!
     username: String!
@@ -29,22 +32,15 @@ export const UserSchema = buildSchema(`
 `)
 
 // The root provides a resolver function for each API endpoint
-export const rootResolver = {
+export const QueryResolver = {
   hello: () => {
     return 'Hello world!'
   },
   users: () => {
-    return [
-      { id: 1, username: 'qwer' },
-      { id: 2, username: 'asdf' },
-      { id: 3, username: 'zxcv' }
-    ]
+    return UserModel.all()
   },
   tweets: () => {
-    return [
-      { id: 1, user_id: 1, content: 'lasdfjlkadjsf', timestamp: 1342567411 },
-      { id: 2, user_id: 2, content: 'asdfasdfasdfads', timestamp: 1342567422 },
-      { id: 3, user_id: 3, content: 'zcvcxzvxzcvxzcv', timestamp: 1342567433 }
-    ]
+    return TweetModel.all()
   }
 } 
+

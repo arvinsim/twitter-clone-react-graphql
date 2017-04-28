@@ -1,6 +1,6 @@
 import express from 'express'
 import graphqlHTTP from 'express-graphql'
-import { UserSchema, rootResolver } from './schemas/user'
+import { QuerySchema, QueryResolver } from './schemas/user'
 
 const app = express()
 
@@ -9,9 +9,15 @@ app.get('/', (req, res) => {
 })
 
 app.use('/graphql', graphqlHTTP({
-  schema: UserSchema,
-  rootValue: rootResolver,
-  graphiql: true
+  schema: QuerySchema,
+  rootValue: QueryResolver,
+  graphiql: true,
+  formatError: error => ({
+    message: error.message,
+    locations: error.locations,
+    stack: error.stack,
+    path: error.path
+  })
 }))
 
 app.listen(5000)
