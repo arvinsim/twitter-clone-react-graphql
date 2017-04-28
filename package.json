@@ -7,7 +7,8 @@
   "author": "Arthur Vincent Simon <developarvin@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon --exec ./node_modules/.bin/babel-node --presets=es2015 -- ./server/index.js"
+    "dev": "nodemon --exec ./node_modules/.bin/babel-node --presets=es2015 -- ./server/index.js",
+    "createdb": "./node_modules/.bin/babel-node ./scripts/createdb.js"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
