@@ -7,8 +7,8 @@ import {
 } from 'graphql'
 
 import TweetType from './TweetType'
-import TweetModel from '../models/tweet.js'
-import FollowerModel from '../models/follower.js'
+import TweetModel from '../models/tweet'
+import FollowerModel from '../models/follower'
 
 const UserType = new GraphQLObjectType({
   name: 'users',

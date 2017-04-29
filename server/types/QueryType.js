@@ -1,27 +1,49 @@
 import {
   GraphQLObjectType,
+  GraphQLID,
+  GraphQLInt,
   GraphQLList
 } from 'graphql'
 
 import UserType from './UserType'
 import TweetType from './TweetType'
 
-import UserModel from '../models/user.js'
-import TweetModel from '../models/tweet.js'
+import UserModel from '../models/user'
+import TweetModel from '../models/tweet'
 
 var QueryType = new GraphQLObjectType({
   name: 'Query',
-  fields: function () {
+  fields () {
     return {
       users: {
         type: new GraphQLList(UserType),
-        resolve: function () {
-          return UserModel.all()
+        args: {
+          id: {
+            type: GraphQLID
+          },
+          limit: {
+            type: GraphQLInt
+          }
+        },
+        resolve (parent, {id, limit}) {
+          let result
+
+          if (id) {
+            result = UserModel.getById(id)
+          } else {
+            result = UserModel.all()
+          }
+
+          if (limit) {
+            result.limit(limit)
+          }
+
+          return result
         }
       },
       tweets: {
         type: new GraphQLList(TweetType),
-        resolve: function () {
+        resolve () {
           return TweetModel.all()
         }
       }

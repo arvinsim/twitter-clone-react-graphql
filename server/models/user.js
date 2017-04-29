@@ -6,7 +6,7 @@ class User {
   }
 
   static getById (userId) {
-    return db.select().from('user').where('id', userId).first()    
+    return db.select().from('user').where('id', userId)
   }
 }
 
