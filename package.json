@@ -10,7 +10,10 @@
     "dev": "nodemon --exec ./node_modules/.bin/babel-node --presets=es2015 -- ./server/index.js",
     "createdb": "./node_modules/.bin/babel-node ./scripts/createdb.js",
     "seeddb": "./node_modules/.bin/babel-node ./scripts/seeddb.js",
-    "setupdb": "yarn createdb && yarn seeddb"
+    "setupdb": "yarn createdb && yarn seeddb",
+    "test": "jest",
+    "lint": "./node_modules/.bin/eslint ./server ./tests",
+    "lint:fix": "./node_modules/.bin/eslint ./server ./tests --fix"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
@@ -18,10 +21,13 @@
     "eslint": "^3.19.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jest": "^19.0.1",
     "eslint-plugin-node": "^4.2.2",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
     "faker": "^4.1.0",
+    "graphql-tools": "^0.11.0",
+    "jest": "^19.0.2",
     "nodemon": "^1.11.0"
   },
   "dependencies": {
