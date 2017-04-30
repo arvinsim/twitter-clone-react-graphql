@@ -7,7 +7,6 @@
   "author": "Arthur Vincent Simon <developarvin@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon --exec ./node_modules/.bin/babel-node --presets=es2015 -- ./server/index.js",
     "createdb": "./node_modules/.bin/babel-node ./scripts/createdb.js",
     "seeddb": "./node_modules/.bin/babel-node ./scripts/seeddb.js",
     "setupdb": "yarn createdb && yarn seeddb",
@@ -20,7 +19,8 @@
     "dev": {
       "command": "nodemon --exec ./node_modules/.bin/babel-node --presets=es2015 -- ./server/index.js",
       "env": {
-        "NODE_ENV": "development"
+        "NODE_ENV": "development",
+        "DEBUG": "app:*"
       }
     },
     "test": {
@@ -42,14 +42,21 @@
     "faker": "^4.1.0",
     "graphql-tools": "^0.11.0",
     "jest": "^19.0.2",
-    "nodemon": "^1.11.0"
+    "nodemon": "^1.11.0",
+    "webpack-dev-middleware": "^1.10.2",
+    "webpack-hot-middleware": "^2.18.0"
   },
   "dependencies": {
     "better-npm-run": "^0.0.15",
+    "compression": "^1.6.2",
+    "debug": "^2.6.6",
     "express": "^4.15.2",
     "express-graphql": "^0.6.4",
     "graphql": "^0.9.3",
     "knex": "^0.12.9",
     "sqlite3": "^3.1.8"
+    "sqlite3": "^3.1.8",
+    "webpack": "^2.4.1",
+    "webpack-dev-server": "^2.4.5"
   }
 }
