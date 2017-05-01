@@ -1,12 +1,20 @@
 var path = require('path')
+var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 var config = {
   devtool: 'eval',
   entry: './app/main.js',
   output: {
+    publicPath: '/',
     path: path.resolve('dist'),
-    filename: 'index_bundle.js'
+    filename: 'bundle.js'
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './app/index.html',
+      inject: 'body'
+    })
+  ],
   module: {
     loaders: [
       {
