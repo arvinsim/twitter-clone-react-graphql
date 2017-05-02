@@ -3,9 +3,18 @@ module.exports = {
     "env": {
       "jest": true
     },
+    "ecmaFeatures": {
+      "jsx": true,
+      "modules": true
+    },
     "plugins": [
-        "standard",
-        "promise",
-        "jest"
-    ]
+      "standard",
+      "promise",
+      "jest",
+      "react"
+    ],
+    "rules": {
+      "react/jsx-uses-react": "error",
+      "react/jsx-uses-vars": "error"
+    }
 };
