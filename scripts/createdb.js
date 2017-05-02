@@ -1,5 +1,5 @@
 const sqlite3 = require('sqlite3').verbose()
-const db = new sqlite3.Database(`./db/twitter.sqlite`, sqlite3.OPEN_CREATE | sqlite3.OPEN_READWRITE)
+const db = new sqlite3.Database(`./data/twitter.sqlite`, sqlite3.OPEN_CREATE | sqlite3.OPEN_READWRITE)
 
 db.serialize(() => {
   db.run('DROP TABLE IF EXISTS user')

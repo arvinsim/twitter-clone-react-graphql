@@ -10,7 +10,7 @@ const getRandomIntInclusive = (min, max) => {
 const knex = require('knex')({
   client: 'sqlite3',
   connection: {
-    filename: `./db/twitter.sqlite`
+    filename: `./data/twitter.sqlite`
   }
 })
 
