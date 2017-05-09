@@ -1,12 +1,35 @@
 import React, { Component } from 'react'
-import User from '../../components/User'
-import Tweets from '../../components/Tweets'
+
+const Profile = () => (
+  <div>Profile</div>
+)
+
+const Trends = () => (
+  <div>Trends</div>
+)
+
+const Sidebar = () => (
+  <div>
+    <Profile />
+    <Trends />
+  </div>
+)
+
+const Tweets = () => (
+  <div>Tweets</div>
+)
+
+const WhoToFollow = () => (
+  <div>WhoToFollow</div>
+)
 
 class Wall extends Component {
   render () {
     return (
       <div>
-        Wall
+        <Sidebar />
+        <Tweets />
+        <WhoToFollow />
       </div>
     )
   }
