@@ -5,7 +5,6 @@ class Home extends Component {
     return (
       <div>
         <h2>Home</h2>
-        <p>Hello! This is the Twitter clone project using React, Relay and Redux</p>
       </div>
     )
   }
