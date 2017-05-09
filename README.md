@@ -1,4 +1,4 @@
-# Twitter Clone using React, Relay and GraphQL
+# Twitter Clone using React and GraphQL
 
 ## Objectives
-Implement GraphQL backend and Relay frontend
+Implement GraphQL backend
